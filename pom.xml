@@ -409,11 +409,9 @@
 					 <goals>
 						<goal>deploy</goal>
 					 </goals>
-					 <!--
 					 <configuration>
 						<altDeploymentRepository>deployment::default::http://localhost:8081/nexus/content/repositories/snapshots</altDeploymentRepository>
 					 </configuration>
-					 -->
 				  </execution>
 			   </executions>
 			</plugin>
