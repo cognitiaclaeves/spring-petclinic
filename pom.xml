@@ -419,6 +419,24 @@
         </plugins>
     </reporting>
 
+	<!--
+	<properties>
+	  <nexus.url>http://mynexus.com:8081/nexus/content</nexus.url>
+	</properties>
+	-->
+
+	<repositories>
+	  <repository>
+		<id>deployment</id>
+		<url>http://localhost:8081/nexus/content/groups/public</url>
+		<!--<url>${nexus.url}/groups/public</url>-->
+		<snapshots>
+		  <enabled>true</enabled>
+		  <updatePolicy>always</updatePolicy>
+		</snapshots>
+	  </repository>
+	</repositories>
+
     <distributionManagement>
         <snapshotRepository>
             <id>snapshots</id>
