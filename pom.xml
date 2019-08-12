@@ -409,9 +409,11 @@
 					 <goals>
 						<goal>deploy</goal>
 					 </goals>
+					 <!--
 					 <configuration>
 						<altDeploymentRepository>deployment::default::http://localhost:8081/nexus/content/repositories/snapshots</altDeploymentRepository>
 					 </configuration>
+					 -->
 				  </execution>
 			   </executions>
 			</plugin>
@@ -476,7 +478,8 @@
 
     <distributionManagement>
         <snapshotRepository>
-            <id>snapshots</id>
+            <!--<id>snapshots</id>-->
+            <id>deployment</id>
 			<name>Local Nexus Snapshots</name>	
             <!-- <url>http://nexus:8081/nexus/content/repositories/snapshots</url> -->
             <url>http://localhost:8081/nexus/content/repositories/snapshots</url>
