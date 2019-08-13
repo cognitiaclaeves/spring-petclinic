@@ -458,6 +458,20 @@
 	</repositories>
     -->
 
+	<repositories>
+	  <repository>
+		<id>dependency-snapshots-repo</id>
+		<url>http://localhost:8081/nexus/content/repositories/snapshots</url>
+		<!-- <url>https://oss.sonatype.org/content/repositories/snapshots</url> -->
+		<releases>
+		  <enabled>false</enabled>
+		</releases>
+		<snapshots>
+		  <enabled>true</enabled>
+		</snapshots>
+	  </repository>
+	</repositories>
+
 	<!--
 	 <distributionManagement>
 	   <repository>
