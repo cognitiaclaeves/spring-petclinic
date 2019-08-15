@@ -186,9 +186,9 @@
             <version>${jodatime-hibernate.version}</version>
         </dependency>
         <dependency>
-            <groupId>joda-time</groupId>
+            <groupId>joda-time-djn</groupId>
             <artifactId>joda-time-jsptags</artifactId>
-            <!-- <version>${jodatime-jsptags.version}</version> -->
+            <version>${jodatime-jsptags.version}</version>
         </dependency>
 
         <!-- Databases - Uses HSQL by default -->
