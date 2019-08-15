@@ -30,7 +30,8 @@
         <!-- Dates -->
         <jodatime-hibernate.version>1.4</jodatime-hibernate.version>
         <!--<jodatime-jsptags.version>1.1.1</jodatime-jsptags.version>-->
-        <jodatime-jsptags.version>latest</jodatime-jsptags.version>
+        <!-- <jodatime-jsptags.version>latest</jodatime-jsptags.version> -->
+        <jodatime-jsptags.version>1.2-SNAPSHOT</jodatime-jsptags.version>
         <jadira-usertype-core.version>3.2.0.GA</jadira-usertype-core.version>
 
         <!-- MySql -->
@@ -187,7 +188,7 @@
         </dependency>
         <dependency>
             <groupId>joda-time-djn</groupId>
-            <artifactId>joda-time-jsptags</artifactId>
+            <artifactId>joda-time-jsptags-djn</artifactId>
             <version>${jodatime-jsptags.version}</version>
         </dependency>
 
