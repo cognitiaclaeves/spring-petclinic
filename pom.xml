@@ -34,6 +34,9 @@
         <jodatime-jsptags.version>1.2-SNAPSHOT</jodatime-jsptags.version>
         <jadira-usertype-core.version>3.2.0.GA</jadira-usertype-core.version>
 
+		<!-- Internal Nexus URL -->
+		<nexus.url>http://localhost:8081/nexus/content</nexus.url>
+
         <!-- MySql -->
         <mysql-driver.version>5.1.36</mysql-driver.version>
 
@@ -411,11 +414,6 @@
 					 <goals>
 						<goal>deploy</goal>
 					 </goals>
-					 <!--
-					 <configuration>
-						<altDeploymentRepository>deployment::default::http://localhost:8081/nexus/content/repositories/snapshots</altDeploymentRepository>
-					 </configuration>
-					 -->
 				  </execution>
 			   </executions>
 			</plugin>
@@ -439,31 +437,10 @@
         </plugins>
     </reporting>
 
-	<!--
-	<properties>
-	  <nexus.url>http://mynexus.com:8081/nexus/content</nexus.url>
-	</properties>
-	-->
-
-	<!--
-	<repositories>
-	  <repository>
-		<id>deployment</id>
-		<url>http://localhost:8081/nexus/content/groups/public</url>
-		<!-<url>${nexus.url}/groups/public</url>->
-		<snapshots>
-		  <enabled>true</enabled>
-		  <updatePolicy>always</updatePolicy>
-		</snapshots>
-	  </repository>
-	</repositories>
-    -->
-
 	<repositories>
 	  <repository>
 		<id>dependency-snapshots-repo</id>
-		<url>http://localhost:8081/nexus/content/repositories/snapshots</url>
-		<!-- <url>https://oss.sonatype.org/content/repositories/snapshots</url> -->
+		<url>${nexus.url}/repositories/snapshots</url>
 		<releases>
 		  <enabled>false</enabled>
 		</releases>
@@ -473,39 +450,20 @@
 	  </repository>
 	</repositories>
 
-	<!--
-	 <distributionManagement>
-	   <repository>
-		 <id>sonatype-joda-staging</id>
-		 <name>Sonatype OSS staging repository</name>
-		 <url>http://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-		 <layout>default</layout>
-	   </repository>
-	   <snapshotRepository>
-		 <uniqueVersion>false</uniqueVersion>
-		 <id>sonatype-joda-snapshot</id>
-		 <name>Sonatype OSS snapshot repository</name>
-		 <url>http://oss.sonatype.org/content/repositories/joda-snapshots</url>
-		 <layout>default</layout>
-	   </snapshotRepository>
-	   <downloadUrl>http://oss.sonatype.org/content/repositories/joda-releases</downloadUrl>
-	 </distributionManagement>
-	-->
-
     <distributionManagement>
         <snapshotRepository>
             <!--<id>snapshots</id>-->
             <id>deployment</id>
-			<name>Local Nexus Snapshots</name>	
-            <!-- <url>http://nexus:8081/nexus/content/repositories/snapshots</url> -->
-            <url>http://localhost:8081/nexus/content/repositories/snapshots</url>
+			<name>Internal Nexus Snapshots</name>	
+			<!-- <url>http://localhost:8081/nexus/content/repositories/snapshots</url> -->
+			<url>${nexus.url}/repositories/snapshots</url>
 			<layout>default</layout>
         </snapshotRepository>
         <repository>
             <id>releases</id>
-			<name>Local Nexus Releases</name>	
-            <!-- <url>http://nexus:8081/nexus/content/repositories/releases</url> -->
-            <url>http://localhost:8081/nexus/content/repositories/releases</url>
+			<name>Internal Nexus Releases</name>
+			<!-- <url>http://localhost:8081/nexus/content/repositories/releases</url> -->
+			<url>${nexus.url}/repositories/releases</url>
 			<layout>default</layout>
         </repository>
     </distributionManagement>
